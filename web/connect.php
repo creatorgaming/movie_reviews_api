@@ -1,9 +1,9 @@
 <?php 
     $servername = "localhost";
     $username = "root";
-    $password = "";
+    $pass = "";
     $database = "radiant-dusk-89811";   
-    $conn = mysqli_connect($servername,$username,$password,$database);
+    $conn = mysqli_connect($servername,$username,$pass,$database);
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
