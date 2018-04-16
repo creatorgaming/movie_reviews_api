@@ -9,11 +9,11 @@
     $query = "SELECT * FROM userLoginInfo WHERE 
                 email = '$email' AND password = '$password'";
     $records = mysqli_query($conn, $query);
-    
-    $result = mysqli_fetch_assoc($records); 
+    $result = mysqli_fetch_assoc($records);
+     
     if($result){
-        echo $result['hash'];
+        echo json_encode($result['hash']);
     }else {
-        echo "NULL";
+        echo json_encode("NULL");
     }    
 ?>
