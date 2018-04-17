@@ -9,11 +9,13 @@
 
     $encodedInfo = array('name' => $name, 'email' => $email);
     include "jwt.php";
+    $jwt;
 
     //  Find if the email is valid or not
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo json_encode(NULL);
     }else {
+        GLOBAL $jwt;
         $jwt = jwtGenerator($encodedInfo);
         $duplicateCheckQuery = "SELECT * FROM userLoginInfo 
                                 WHERE email = '$email' ";
@@ -24,7 +26,7 @@
                         VALUES ('$name','$email','$password','$jwt')";
             mysqli_query($conn, $query);
         }else{
-            echo json_encode(NULL);
+            $jwt = NULL;
         }
     }
     echo json_encode($jwt);
