@@ -1,6 +1,6 @@
 <?php
     include 'connect.php';
-    
+
     //$query = "INSERT INTO `movieinfo` VALUES ('tt1375666','','')";
     // $done = mysqli_query($conn,$query);
     // if($done){
@@ -14,6 +14,5 @@
         $movies[] = $row['movieId'];
     }
     echo json_encode($movies);
-    print_r($movies);
     include "disconnect.php";
 ?>
