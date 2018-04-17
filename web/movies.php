@@ -1,4 +1,17 @@
 <?php
-    $movies = "tt0111161,tt0068646,tt0468569,tt0050083,tt0108052,tt0167260";
-    echo $movies;
+    include 'connect.php';
+    //$query = "INSERT INTO `movieinfo` VALUES ('tt1375666','','')";
+    // $done = mysqli_query($conn,$query);
+    // if($done){
+    //     echo "done";
+    // }
+
+    $movies = array();
+    $getMovieQuery = "SELECT movieId FROM movieinfo";
+    while($row = mysqli_fetch_array(mysqli_query($conn,             $getMovieQuery))){
+        $movies[] = $row['movieId'];
+    }
+    echo json_encode($movies);
+
+    include "disconnect.php";
 ?>
