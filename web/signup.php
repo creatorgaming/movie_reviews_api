@@ -31,4 +31,5 @@
         }
     }
     echo json_encode($jwt);
+    include "disconnect.php"
 ?>

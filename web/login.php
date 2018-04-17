@@ -15,5 +15,6 @@
         echo json_encode($result['jwt']);
     }else {
         echo json_encode(NULL);
-    }    
+    }
+    include "disconnect.php";    
 ?>
