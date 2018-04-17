@@ -12,8 +12,8 @@
     $result = mysqli_fetch_assoc($records);
      
     if($result){
-        echo json_encode($result['hash']);
+        echo json_encode($result['jwt']);
     }else {
-        echo json_encode("NULL");
+        echo json_encode(NULL);
     }    
 ?>
