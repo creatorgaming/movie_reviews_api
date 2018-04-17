@@ -1,6 +1,6 @@
 <?php
     include "connect.php";
-
+    
     $data = file_get_contents('php://input');
     $decoded = json_decode($data);
     $movieId = $decoded->id;
