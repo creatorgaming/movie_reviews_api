@@ -15,7 +15,6 @@
         echo json_encode(NULL);
     }else {
         $jwt = jwtGenerator($encodedInfo);
-        // echo "INITIAL JWT: ".$jwt."<br>";
         $duplicateCheckQuery = "SELECT * FROM userLoginInfo 
                                 WHERE email = '$email' ";
         $duplicateCheckQueryResult = mysqli_fetch_assoc(mysqli_query($conn,
@@ -25,7 +24,7 @@
                         VALUES ('$name','$email','$password','$jwt')";
             mysqli_query($conn, $query);
         }else{
-            echo "Duplicate Email";
+            echo json_encode(NULL);
         }
     }
     echo json_encode($jwt);
