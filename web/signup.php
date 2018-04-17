@@ -9,13 +9,13 @@
 
     $encodedInfo = array('name' => $name, 'email' => $email);
     include "jwt.php";
-    $jwt = jwtGenerator($encodedInfo);
-    //echo $jwt;
 
     //  Find if the email is valid or not
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo json_encode(NULL);
     }else {
+        $jwt = jwtGenerator($encodedInfo);
+        // echo "INITIAL JWT: ".$jwt."<br>";
         $duplicateCheckQuery = "SELECT * FROM userLoginInfo 
                                 WHERE email = '$email' ";
         $duplicateCheckQueryResult = mysqli_fetch_assoc(mysqli_query($conn,
