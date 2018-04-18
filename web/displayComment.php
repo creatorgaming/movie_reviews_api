@@ -9,7 +9,7 @@
         $comments = array();
         $commentsEntry = new commentClass();
 
-        $fetchQuery = "SELECT jwt,comment FROM usercomments WHERE movieId = '$movieId'";
+        $fetchQuery = "SELECT jwt,comment FROM userComments WHERE movieId = '$movieId'";
         $fetchQueryRun = mysqli_query($conn,$fetchQuery);
 
         while($result = mysqli_fetch_assoc($fetchQueryRun)){
