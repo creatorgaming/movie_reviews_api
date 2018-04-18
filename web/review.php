@@ -6,8 +6,7 @@
     $movieId = $decoded->id;
     $review = NULL;
     if($movieId){
-        $query = "SELECT review FROM movieinfo WHERE 
-                    movieId = '$movieId' ";
+        $query = "SELECT review FROM movieinfo WHERE movieId = '$movieId' ";
         $queryRun = mysqli_query($conn,$query);
         $queryResult = mysqli_fetch_assoc($queryRun);
         if($queryResult){
