@@ -28,6 +28,7 @@
             mysqli_query($conn, $query);
         }
     }
-    echo json_encode($jwt);
+    echo $jwt;
+    //echo json_encode($jwt);
     include "disconnect.php"
 ?>
