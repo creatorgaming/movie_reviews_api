@@ -1,11 +1,11 @@
 <?php
     class commentClass{
         public $jwt;
-        public $comment;
+        public $text;
 
         public function changeObjectAttributes($jwtNew,$commentNew){
             $jwt = $jwtNew;
-            $comment = $commentNew;
+            $text = $commentNew;
         }
     }
 ?>

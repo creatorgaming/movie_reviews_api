@@ -16,7 +16,7 @@
             $jwt = $result['jwt'];
             $comment = $result['comment'];
             $commentsEntry->jwt = $jwt;
-            $commentsEntry->comment = $comment;
+            $commentsEntry->text = $comment;
             // $commentsEntry->changeObjectAttributes($jwt,$comment);
             $comments[] = $commentsEntry;
         }    
