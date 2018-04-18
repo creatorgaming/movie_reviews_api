@@ -3,9 +3,9 @@
         public $jwt;
         public $text;
 
-        public function changeObjectAttributes($jwtNew,$commentNew){
-            $jwt = $jwtNew;
-            $text = $commentNew;
+        public function __construct($jwt,$text){
+            $this->jwt = $jwt;
+            $this->text = $text;
         }
     }
 ?>
