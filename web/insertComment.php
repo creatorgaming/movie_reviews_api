@@ -1,7 +1,7 @@
 <?php
     $data = file_get_contents('php://input');
     $decoded = json_decode($data);
-    $time = date("h:i:s", time());
+    $time = date("d/m/y", time());
     echo $time;
     // if($decoded){
     //     include "connect.php";
