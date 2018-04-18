@@ -1,6 +1,6 @@
 <?php
     include 'connect.php';
-    
+
     //$query = "INSERT INTO `movieinfo` VALUES ('tt1375666','','')";
     // $done = mysqli_query($conn,$query);
     // if($done){
