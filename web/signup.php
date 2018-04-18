@@ -25,6 +25,9 @@
             $query = "INSERT INTO userLoginInfo (`name`, `email`,`password`, `jwt`)
                         VALUES ('$name','$email','$password','$jwt')";
             mysqli_query($conn, $query);
+            echo json_encode($jwt);
+        }else {
+            echo json_encode(NULL);
         }
     }
     include "disconnect.php"
