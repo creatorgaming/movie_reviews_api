@@ -10,12 +10,12 @@
 
         $fetchQuery = "SELECT jwt,comment FROM userComments WHERE movieId = '$movieId'";
         $fetchQueryRun = mysqli_query($conn,$fetchQuery);
-        $index = 0;
+        
         while($result = mysqli_fetch_array($fetchQueryRun)){
             $jwt = $result['jwt'];
             $comment = $result['comment'];
-            $commentsEntry = new commentClass($jwt,$comment);            $comments[$index] = $commentsEntry;
-            $index++;
+            $commentsEntry = new commentClass($jwt,$comment);            
+            $comments[] = $commentsEntry;
         }  
          
     }
