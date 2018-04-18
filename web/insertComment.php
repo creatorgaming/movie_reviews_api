@@ -11,8 +11,12 @@
 
         $insertQuery = "INSERT INTO `userComments`(movieId, comment, date, jwt) VALUES ('$movieId','$comment','$date','$jwt')";
         $insertQueryRun = mysqli_query($conn,$insertQuery);
-        if($insertQueryRun){
-            echo "DONE";
-        }      
+        if($insertQueryRun) {
+            echo json_encode(1);
+        }else {
+            echo json_encode(0);
+        }
+    }else {
+        echo json_encode(0);
     }
 ?>
