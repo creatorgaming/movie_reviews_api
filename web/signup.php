@@ -15,13 +15,13 @@
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo json_encode(NULL);
     }else {
-        GLOBAL $jwt;
-        $jwt = jwtGenerator($encodedInfo);
         $duplicateCheckQuery = "SELECT * FROM userLoginInfo WHERE
                                  email = '$email' ";
         $duplicateCheckQueryResult = mysqli_fetch_assoc(mysqli_query($conn,
                                            $duplicateCheckQuery));
         if(!$duplicateCheckQueryResult){
+            GLOBAL $jwt;
+            $jwt = jwtGenerator($encodedInfo);
             $query = "INSERT INTO userLoginInfo (`name`, `email`,`password`, `jwt`)
                         VALUES ('$name','$email','$password','$jwt')";
 
