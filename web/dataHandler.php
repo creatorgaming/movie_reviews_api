@@ -25,7 +25,7 @@
 	}
 	function add_review($movieId,$review,$description,$reviewConn,$movieReview_db)
 	{
-		$sql = 'INSERT INTO  `$movieReview_db` (MovieID, Description, Review) VALUES ('$movieId','$description','$review')';
+		$sql = "INSERT INTO  `$movieReview_db` (MovieID, Description, Review) VALUES ('$movieId','$description','$review')";
 		$result = mysqli_query($reviewConn,$sql);
 		if(!$result)
 			return -1;
@@ -36,23 +36,25 @@
 		{
 			return -1;
 		}
-		$sql = 'INSERT INTO  `$movieReview_db` (MovieID, Description, Review) VALUES ('$movieId','$description','$review')';
+		$sql = "INSERT INTO  `$movieReview_db` (MovieID, Description, Review) VALUES ('$movieId','$description','$review')";
 		$result = mysqli_query($reviewConn,$sql);
 		if(!$result)
 			return -1;
 	}
 	function get_all_reviews($reviewConn,$movieReview_db)
 	{
-		$sql = 'SELECT * FROM `$movieReview_db` WHERE 1';
+		$sql = "SELECT * FROM `$movieReview_db` WHERE 1";
 		$result = mysqli_query($reviewConn,$sql);
-		while ($val = mysqli_fetch_array($result)) {
-		}
+		$reviewArray = array();
+		while ($val = mysqli_fetch_array($result)) array_push($reviewArray, $val);
+		return $reviewArray;
 	}
 	function get_all_comments($commentConn,$comment_db)
 	{
-		$sql = 'SELECT * FROM `$comment_db` WHERE 1';
+		$sql = "SELECT * FROM `$comment_db` WHERE 1";
 		$result = mysqli_query($commentConn,$sql);
-		while ($val = mysqli_fetch_array($result)) {
-		}
+		$allCommentsArray = array();
+		while ($val = mysqli_fetch_array($result)) array_push($allCommentsArray, $val);
+		return $allCommentsArray;
 	}
  ?>
