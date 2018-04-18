@@ -12,4 +12,5 @@
         die("Connection failed: " . mysqli_connect_error());
     }
     //echo "<br>!! Database Connected successfully !!<br>";
+	// Okay
 ?>
