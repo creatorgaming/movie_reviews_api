@@ -9,7 +9,7 @@
 
     $encodedInfo = array('name' => $name, 'email' => $email);
     include "jwt.php";
-    $jwt;
+    $jwt = NULL;
 
     //  Find if the email is valid or not
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -27,6 +27,7 @@
 
             mysqli_query($conn, $query);
         }else{
+            GLOBAL $jwt;
             $jwt = NULL;
         }
     }
