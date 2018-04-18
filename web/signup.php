@@ -1,6 +1,6 @@
-<?php  
+<?php
     include 'connect.php';
-    
+
     $data = file_get_contents('php://input');
     $decoded = json_decode($data);
     $email = $decoded->email;
@@ -17,14 +17,14 @@
     }else {
         GLOBAL $jwt;
         $jwt = jwtGenerator($encodedInfo);
-        $duplicateCheckQuery = "SELECT * FROM userLoginInfo WHERE 
+        $duplicateCheckQuery = "SELECT * FROM userLoginInfo WHERE
                                  email = '$email' ";
         $duplicateCheckQueryResult = mysqli_fetch_assoc(mysqli_query($conn,
                                            $duplicateCheckQuery));
         if(!$duplicateCheckQueryResult){
-            $query = "INSERT INTO userLoginInfo (`name`, `email`,`password`, `jwt`) 
+            $query = "INSERT INTO userLoginInfo (`name`, `email`,`password`, `jwt`)
                         VALUES ('$name','$email','$password','$jwt')";
-            
+
             mysqli_query($conn, $query);
         }else{
             $jwt = NULL;

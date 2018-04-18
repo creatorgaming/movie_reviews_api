@@ -1,12 +1,11 @@
 <?php
-	function fetch_comment($movieId,$commentConn,$comment_db)
+	function fetch_comment_array($movieId,$commentConn,$comment_db)
 	{
 		$sql = "SELECT * FROM `$comment_db` WHERE MovieID = '$movieId'";
 		$result = mysqli_query($commentconn,$sql);
-		while($val = mysqli_fetch_array($result))
-		{
-
-		}
+		$commentArray = array();
+		while($val = mysqli_fetch_array($result)) array_push($commentArray, $val);
+		return $commentArray;
 	}
 	function add_comment($movieId,$userEmail,$comment,$commentConn,$comment_db)
 	{
@@ -46,14 +45,16 @@
 	{
 		$sql = "SELECT * FROM `$movieReview_db` WHERE 1";
 		$result = mysqli_query($reviewConn,$sql);
-		while ($val = mysqli_fetch_array($result)) {
-		}
+		$reviewArray = array();
+		while ($val = mysqli_fetch_array($result)) array_push($reviewArray, $val);
+		return $reviewArray;
 	}
 	function get_all_comments($commentConn,$comment_db)
 	{
 		$sql = "SELECT * FROM `$comment_db` WHERE 1";
 		$result = mysqli_query($commentConn,$sql);
-		while ($val = mysqli_fetch_array($result)) {
-		}
+		$allCommentsArray = array();
+		while ($val = mysqli_fetch_array($result)) array_push($allCommentsArray, $val);
+		return $allCommentsArray;
 	}
  ?>

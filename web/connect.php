@@ -1,8 +1,8 @@
-<?php 
+<?php
     $servername = "sql12.freesqldatabase.com";
     $username = "sql12233034";
     $pass = "bSsMvMeKgB";
-    $database = "sql12233034";   
+    $database = "sql12233034";
     // $servername = "localhost";
     // $username = "root";
     // $pass = "";
@@ -12,4 +12,5 @@
         die("Connection failed: " . mysqli_connect_error());
     }
     //echo "<br>!! Database Connected successfully !!<br>";
+	// Okay
 ?>
