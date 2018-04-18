@@ -16,7 +16,7 @@
         echo json_encode(NULL);
     }else {
         $duplicateCheckQuery = "SELECT * FROM userLoginInfo WHERE
-                                 email = '$email' ";
+                                 email = '$email'";
         $duplicateCheckQueryResult = mysqli_fetch_assoc(mysqli_query($conn,
                                            $duplicateCheckQuery));
         if(!$duplicateCheckQueryResult){
@@ -26,9 +26,6 @@
                         VALUES ('$name','$email','$password','$jwt')";
 
             mysqli_query($conn, $query);
-        }else{
-            GLOBAL $jwt;
-            $jwt = NULL;
         }
     }
     echo json_encode($jwt);
