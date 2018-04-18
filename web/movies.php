@@ -14,6 +14,5 @@
         $movies[] = $row['movieId'];
     }
     echo json_encode($movies);
-    print_r($movies);
     include "disconnect.php";
 ?>
