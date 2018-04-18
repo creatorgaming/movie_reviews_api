@@ -20,7 +20,6 @@
             // $commentsEntry->changeObjectAttributes($jwt,$comment);
             $comments[] = $commentsEntry;
         }    
-        print_r($comments);
     }
-    //echo json_encode($comments);
+    echo json_encode($comments);
 ?>
