@@ -11,14 +11,15 @@
 
         $fetchQuery = "SELECT jwt,comment FROM userComments WHERE movieId = '$movieId'";
         $fetchQueryRun = mysqli_query($conn,$fetchQuery);
-
-        while($result = mysqli_fetch_assoc($fetchQueryRun)){
+        $i = 0;
+        while($result = mysqli_fetch_array($fetchQueryRun)){
             $jwt = $result['jwt'];
             $comment = $result['comment'];
             $commentsEntry->jwt = $jwt;
             $commentsEntry->text = $comment;
             // $commentsEntry->changeObjectAttributes($jwt,$comment);
-            $comments[] = $commentsEntry;
+            $comments[$i] = $commentsEntry;
+            $i++;
         }    
     }
     echo json_encode($comments);

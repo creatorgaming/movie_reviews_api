@@ -1,7 +1,7 @@
 <?php
 	function fetch_comment($movieId,$commentConn,$comment_db)
 	{
-		$sql = 'SELECT * FROM `$comment_db` WHERE MovieID = '$movieId'';
+		$sql = "SELECT * FROM `$comment_db` WHERE MovieID = '$movieId'";
 		$result = mysqli_query($commentconn,$sql);
 		while($val = mysqli_fetch_array($result))
 		{
