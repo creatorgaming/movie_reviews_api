@@ -4,19 +4,21 @@
 		$sql = "SELECT * FROM `$comment_db` WHERE MovieID = '$movieId'";
 		$result = mysqli_query($commentconn,$sql);
 		$commentArray = array();
-		while($val = mysqli_fetch_array($result)) array_push($commentArray, $val);
+		while($val = mysqli_fetch_array($result)) {
+			array_push($commentArray, $val);
+		}
 		return $commentArray;
 	}
 	function add_comment($movieId,$userEmail,$comment,$commentConn,$comment_db)
 	{
-		$sql = 'INSERT INTO  `$comment_db` (MovieID, UserEmail, Comment) VALUES ('$movieId','$userEmail','$comment')';
+		$sql = "INSERT INTO  `$comment_db` (MovieID, UserEmail, Comment) VALUES ('$movieId','$userEmail','$comment')";
 		$result = mysqli_query($commentconn,$sql);
 		if(!$result)
 			return -1;
 	}
 	function search_review($movieId,$reviewConn,$movieReview_db)
 	{
-		$sql = 'SELECT * FROM `$movieReview_db` WHERE MovieID = '$movieId'';
+		$sql = "SELECT * FROM `$movieReview_db` WHERE MovieID = '$movieId'";
 		$result = mysqli_query($commentconn,$sql);
 		if($result)
 			return "true";
