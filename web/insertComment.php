@@ -9,6 +9,9 @@
         $movieId = $decoded->id;
 
         $insertQuery = "INSERT INTO `usercomments`(`movieId`, `comment`, `jwt`) VALUES ('$movieId','$comment','$jwt')";
-        $insertQueryRun = mysqli_query($conn,$insertQuery);
+
+        $insertQueryRun = mysqli_query($conn,$insertQuery);        
     }
+
+    include "disconnect.php"
 ?>
