@@ -4,9 +4,7 @@
 		$sql = "SELECT * FROM `$comment_db` WHERE MovieID = '$movieId'";
 		$result = mysqli_query($commentconn,$sql);
 		$commentArray = array();
-		while($val = mysqli_fetch_array($result)) {
-			array_push($commentArray, $val);
-		}
+		while($val = mysqli_fetch_array($result)) array_push($commentArray, $val);
 		return $commentArray;
 	}
 	function add_comment($movieId,$userEmail,$comment,$commentConn,$comment_db)

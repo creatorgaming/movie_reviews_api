@@ -1,8 +1,8 @@
-<?php 
+<?php
     $servername = "sql12.freesqldatabase.com";
     $username = "sql12233034";
     $pass = "bSsMvMeKgB";
-    $database = "sql12233034";   
+    $database = "sql12233034";
     // $servername = "localhost";
     // $username = "root";
     // $pass = "";
