@@ -4,6 +4,8 @@
     
     if($decoded){
         include "connect.php";
+        include "commentClass.php";
+        
         $date = date("d/m/y", time());
         $jwt = $decoded->jwt;
         $comment = $decoded->comment;
@@ -12,7 +14,8 @@
         $insertQuery = "INSERT INTO `userComments`(movieId, comment, date, jwt) VALUES ('$movieId','$comment','$date','$jwt')";
         $insertQueryRun = mysqli_query($conn,$insertQuery);
         if($insertQueryRun) {
-            echo json_encode(1);
+            $returnObject = new commentClass($jwt,$comment,$date); 
+            echo json_encode($returnObject);
         }else {
             echo json_encode(0);
         }
