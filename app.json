@@ -1,5 +1,5 @@
 {
-  "name": "Start on Heroku: PHP",
+  "name": "Movie Review",
   "description": "A barebones PHP app that makes use of the Silex web framework",
   "repository": "https://github.com/heroku/movie_reviews_api",
   "addons": []
