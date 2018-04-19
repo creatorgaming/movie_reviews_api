@@ -20,18 +20,8 @@
 
             if($insertQueryRun){                
                 echo json_encode(1);
-            }else {
-                echo "INSERT query NULL";
-                echo json_encode(NULL);
             }
-            
-        }else {
-            echo "Duplicate query NULL";
-            echo json_encode(NULL);
         }
-    }else {
-        echo "outside query NULL";
-        echo json_encode(NULL);
     }
         include "disconnect.php";
 ?>
