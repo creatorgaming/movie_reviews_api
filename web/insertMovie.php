@@ -18,17 +18,19 @@
             $insertQuery = "INSERT INTO `movieinfo`(movieId, description, review, rating) VALUES ('$movieId','$descprition','$review','$rating')";
             $insertQueryRun = mysqli_query($conn, $insertQuery);
 
-            if($insertQueryRun){
-                echo "INSERT query ram";
+            if($insertQueryRun){                
                 echo json_encode(1);
             }else {
+                echo "INSERT query NULL";
                 echo json_encode(NULL);
             }
             
         }else {
+            echo "Duplicate query NULL";
             echo json_encode(NULL);
         }
     }else {
+        echo "outside query NULL";
         echo json_encode(NULL);
     }
         include "disconnect.php";
