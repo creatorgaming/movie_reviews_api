@@ -4,7 +4,7 @@
     $email = $decoded->email;
     $password = $decoded->password;
 
-    if($decoded)
+    if($decoded){
         include 'connect.php';
         $query = "SELECT * FROM userLoginInfo WHERE
                 email = '$email' AND password = '$password'";
@@ -15,6 +15,7 @@
             echo json_encode($result['jwt']);
         }else {
             echo json_encode(NULL);
+        }
     }
     include "disconnect.php";
 ?>

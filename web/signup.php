@@ -1,6 +1,5 @@
 <?php
     include 'connect.php';
-    include 'jwt.php';
 
     $data = file_get_contents('php://input');
     $decoded = json_decode($data);
@@ -15,12 +14,12 @@
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         echo json_encode(NULL);
     }else {
+        include 'jwt.php';
         $duplicateCheckQuery = "SELECT * FROM userLoginInfo WHERE
                                  email = '$email'";
         $duplicateCheckQueryRun = mysqli_query($conn,$duplicateCheckQuery);
         $duplicateCheckQueryResult = mysqli_fetch_assoc($duplicateCheckQueryRun);
         if(!$duplicateCheckQueryResult){
-            echo "DUcko this";
             GLOBAL $jwt;
             $jwt = jwtGenerator($encodedInfo);
             $query = "INSERT INTO userLoginInfo (`name`, `email`,`password`, `jwt`)
