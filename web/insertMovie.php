@@ -3,7 +3,7 @@
 
     $data = file_get_contents('php://input');
     $decoded = json_decode($data);
-    
+
     if($decoded){
         $descprition = $decoded->description;
         $movieId = $decoded->id;
@@ -19,6 +19,7 @@
             $insertQueryRun = mysqli_query($conn, $insertQuery);
 
             if($insertQueryRun){
+                echo "INSERT query ram";
                 echo json_encode(1);
             }else {
                 echo json_encode(NULL);
