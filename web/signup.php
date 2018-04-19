@@ -1,6 +1,6 @@
 <?php
     include 'connect.php';
-    include "jwt.php";
+    include 'jwt.php';
 
     $data = file_get_contents('php://input');
     $decoded = json_decode($data);
@@ -20,6 +20,7 @@
         $duplicateCheckQueryRun = mysqli_query($conn,$duplicateCheckQuery);
         $duplicateCheckQueryResult = mysqli_fetch_assoc($duplicateCheckQueryRun);
         if(!$duplicateCheckQueryResult){
+            echo "DUcko this";
             GLOBAL $jwt;
             $jwt = jwtGenerator($encodedInfo);
             $query = "INSERT INTO userLoginInfo (`name`, `email`,`password`, `jwt`)
