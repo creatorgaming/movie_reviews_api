@@ -3,7 +3,7 @@
 
     $data = file_get_contents('php://input');
     $decoded = json_decode($data);
-    
+    echo json_encode("In insertMovie.php");
     if($decoded){
         $descprition = $decoded->description;
         $movieId = $decoded->id;
@@ -16,7 +16,6 @@
         $duplicateCheckQueryResult = mysqli_fetch_assoc($duplicateCheckQueryRun);
         if(!$duplicateCheckQueryResult){
             $insertQuery = "INSERT INTO `movieinfo`(movieId, description, review, rating) VALUES ('$movieId','$descprition','$review','$rating')";
-            
             $insertQueryRun = mysqli_query($conn, $insertQuery);
 
             if($insertQueryRun){
