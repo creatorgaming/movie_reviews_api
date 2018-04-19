@@ -3,7 +3,7 @@
 
     $data = file_get_contents('php://input');
     $decoded = json_decode($data);
-    echo json_encode("In insertMovie.php");
+    
     if($decoded){
         $descprition = $decoded->description;
         $movieId = $decoded->id;
