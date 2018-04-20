@@ -1,9 +1,6 @@
 <?php
     include "connect.php";
-
-    $data = file_get_contents('php://input');
-    $decoded = json_decode($data);
-    $movieId = $decoded->id;
+    $movieId = $_GET['id'];
     $description = array();
     if($movieId){
         $query = "SELECT description,rating FROM movieinfo WHERE

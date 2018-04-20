@@ -5,7 +5,7 @@
     $decoded = json_decode($data);
 
     if($decoded){
-        $descprition = $decoded->description;
+        $description = $decoded->description;
         $movieId = $decoded->id;
         $review = $decoded->review;
         $rating = $decoded->rating;
@@ -15,13 +15,12 @@
         $duplicateCheckQueryRun = mysqli_query($conn,$duplicateCheck);
         $duplicateCheckQueryResult = mysqli_fetch_assoc($duplicateCheckQueryRun);
         if(!$duplicateCheckQueryResult){
-            $insertQuery = "INSERT INTO `movieinfo`(movieId, description, review, rating) VALUES ('$movieId','$descprition','$review','$rating')";
+            $insertQuery = "INSERT INTO `movieinfo`(movieId, description, review, rating) VALUES ('$movieId','$description','$review','$rating')";
             $insertQueryRun = mysqli_query($conn, $insertQuery);
-
             if($insertQueryRun){                
                 echo json_encode(1);
             }
         }
     }
-        include "disconnect.php";
+    include "disconnect.php";
 ?>
