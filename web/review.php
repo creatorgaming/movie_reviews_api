@@ -14,6 +14,6 @@
         }
     }
 
-    //echo json_encode($review);
+    echo json_encode($review);
     include "disconnect.php";
 ?>

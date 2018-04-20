@@ -15,8 +15,7 @@
             $date = $result['date'];
             $commentsEntry = new commentClass($jwt,$comment,$date);
             $comments[] = $commentsEntry;
-        }  
-         
+        }           
     }
     echo json_encode($comments);
 ?>
