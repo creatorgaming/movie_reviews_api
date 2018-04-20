@@ -1,11 +1,10 @@
 <?php
-    $data = file_get_contents('php://input');
-    $decoded = json_decode($data);
     
-    if($decoded){
+    $movieId = $_GET['id'];
+
+    if($movieId){
         include "connect.php";
         include "commentClass.php";
-        $movieId = $decoded->id;
         $comments = array();
 
         $fetchQuery = "SELECT jwt,comment,date FROM userComments WHERE movieId = '$movieId'";
