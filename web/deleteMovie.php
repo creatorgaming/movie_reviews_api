@@ -20,8 +20,7 @@
                 echo json_encode(1);
             }else {
                 echo json_encode(NULL);
-            }
-            
+            }            
         }else {
             echo json_encode(NULL);
         }

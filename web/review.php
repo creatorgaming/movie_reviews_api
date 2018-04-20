@@ -1,6 +1,4 @@
 <?php
-    
-    
     $movieId = $_GET['id'];
     $review = NULL;
     if($movieId){
@@ -13,7 +11,6 @@
             $review = $queryResult['review'];
         }
     }
-    
     echo json_encode($review);
     include "disconnect.php";
 ?>
