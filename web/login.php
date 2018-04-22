@@ -16,6 +16,6 @@
         }else {
             echo json_encode(NULL);
         }
+		include "disconnect.php";
     }
-    include "disconnect.php";
 ?>
