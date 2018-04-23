@@ -11,7 +11,7 @@
         $comment = $decoded->comment;
         $movieId = $decoded->id;
 
-        $insertQuery = "INSERT INTO `userComments`(movieId, comment, date, jwt) VALUES ('$movieId','$comment','$date','$jwt')";
+        $insertQuery = "INSERT INTO `usercomments`(movieId, comment, date, jwt) VALUES ('$movieId','$comment','$date','$jwt')";
         $insertQueryRun = mysqli_query($conn,$insertQuery);
         if($insertQueryRun) {
             $returnObject = new commentClass($jwt,$comment,$date); 

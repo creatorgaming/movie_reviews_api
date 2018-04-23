@@ -6,7 +6,7 @@
 
         $comments = array();
 
-        $fetchQuery = "SELECT jwt,comment,date FROM userComments WHERE movieId = '$movieId'";
+        $fetchQuery = "SELECT jwt,comment,date FROM usercomments WHERE movieId = '$movieId'";
         $fetchQueryRun = mysqli_query($conn,$fetchQuery);
 
         while($result = mysqli_fetch_array($fetchQueryRun)){

@@ -6,7 +6,7 @@
 
     if($decoded){
         include 'connect.php';
-        $query = "SELECT * FROM userLoginInfo WHERE
+        $query = "SELECT * FROM userlogininfo WHERE
                 email = '$email' AND password = '$password'";
         $records = mysqli_query($conn, $query);
         $result = mysqli_fetch_assoc($records);

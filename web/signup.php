@@ -15,7 +15,7 @@
         echo json_encode(NULL);
     }else {
         include 'jwt.php';
-        $duplicateCheckQuery = "SELECT * FROM userLoginInfo WHERE
+        $duplicateCheckQuery = "SELECT * FROM userlogininfo WHERE
                                  email = '$email'";
         $duplicateCheckQueryRun = mysqli_query($conn,$duplicateCheckQuery);
         $duplicateCheckQueryResult = mysqli_fetch_assoc($duplicateCheckQueryRun);
