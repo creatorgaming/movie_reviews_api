@@ -10,7 +10,7 @@
         if($queryResult){
             $review = $queryResult['review'];
         }
+		include "disconnect.php";
     }
     echo json_encode($review);
-    include "disconnect.php";
 ?>
