@@ -1,6 +1,4 @@
 <?php
-    include 'connect.php';
-
     $data = file_get_contents('php://input');
     $decoded = json_decode($data);
     $email = $decoded->email;
@@ -15,6 +13,7 @@
         echo json_encode(NULL);
     }else {
         include 'jwt.php';
+        include 'connect.php';
         $duplicateCheckQuery = "SELECT * FROM userlogininfo WHERE email = '$email'";
         $duplicateCheckQueryRun = mysqli_query($conn,$duplicateCheckQuery);
         $duplicateCheckQueryResult = mysqli_fetch_assoc($duplicateCheckQueryRun);
