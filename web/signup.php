@@ -15,8 +15,7 @@
         echo json_encode(NULL);
     }else {
         include 'jwt.php';
-        $duplicateCheckQuery = "SELECT * FROM userlogininfo WHERE
-                                 email = '$email'";
+        $duplicateCheckQuery = "SELECT * FROM userlogininfo WHERE email = '$email'";
         $duplicateCheckQueryRun = mysqli_query($conn,$duplicateCheckQuery);
         $duplicateCheckQueryResult = mysqli_fetch_assoc($duplicateCheckQueryRun);
         if(!$duplicateCheckQueryResult){
@@ -24,7 +23,6 @@
             $jwt = jwtGenerator($encodedInfo);
             $query = "INSERT INTO userlogininfo(name, email, password, jwt) VALUES 
             ('$name','$email','$password','$jwt')";
-            echo $query."<br>";
             mysqli_query($conn, $query);
             echo json_encode($jwt);
         }else {
