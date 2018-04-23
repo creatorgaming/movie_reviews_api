@@ -5,7 +5,6 @@
         include "commentClass.php";
 
         $comments = array();
-
         $fetchQuery = "SELECT jwt,comment,date FROM usercomments WHERE movieId = '$movieId'";
         $fetchQueryRun = mysqli_query($conn,$fetchQuery);
 
