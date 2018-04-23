@@ -22,7 +22,7 @@
         if(!$duplicateCheckQueryResult){
             GLOBAL $jwt;
             $jwt = jwtGenerator($encodedInfo);
-            $query = "INSERT INTO userLoginInfo (`name`, `email`,`password`, `jwt`)
+            $query = "INSERT INTO userlogininfo (`name`, `email`,`password`, `jwt`)
                         VALUES ('$name','$email','$password','$jwt')";
             mysqli_query($conn, $query);
             echo json_encode($jwt);
